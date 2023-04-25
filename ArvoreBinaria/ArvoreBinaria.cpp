@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iostream>
 using namespace std;
 
 // definicao de tipo
@@ -71,7 +72,7 @@ void menu()
 void inicializar()
 {
 
-	// provisÛrio porque n„o libera a memoria usada pela arvore
+	// provis√≥rio porque n√£o libera a memoria usada pela arvore
 	NO* raiz = NULL;
 	
 	cout << "Arvore inicializada \n";
@@ -138,7 +139,6 @@ NO* insereArvore(NO* no, int valor)
 	else {
 		return NULL;
 	}
-	
 }
 
 int elementosArvore(NO* no)
@@ -152,5 +152,13 @@ int elementosArvore(NO* no)
 
 void exibirElementosArvore(NO* no)
 {
-	
+	if (no == NULL) {
+		return;
+	}
+
+	cout << no->valor << endl;
+
+	exibirElementosArvore(no->esq);
+	exibirElementosArvore(no->dir);
+
 }
